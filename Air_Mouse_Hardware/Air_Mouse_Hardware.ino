@@ -69,16 +69,16 @@ void loop() {
   Y = OY + mpu6050.getAngleY();
   Z = OZ + mpu6050.getAngleZ();
 
-  if(digitalRead(MouseB) == HIGH){                                  // Checks if Mouse Enabled Button is pushed
+  if(digitalRead(MouseB) == HIGH || 1){                                  // Checks if Mouse Enabled Button is pushed
     delay(5);                                                       // Mouse movement resolution delay
     Serial.println("DATAL,"+String(X)+','+String(Y)+','+String(Z)); // Sends corrected gyro data to the Serial Port with the identifier "DATAL"
   }
-  if(digitalRead(LeftB) == HIGH){                                   // Checks if Left Mouse Button is pushed
-    delay(100);                                                     // Debounce delay
-    Serial.println("DATAB,L");                                      // Sends "L" stating the left button is pressed with the identifier "DATAB"
-  }
-  if(digitalRead(RightB) == HIGH){                                  // Checks if Right Enabled Button is pushed
-    delay(100);                                                     // Debounce delay
-    Serial.println("DATAB,R");                                      // Sends "L" stating the left button is pressed with the identifier "DATAB"
-  }
+  // if(digitalRead(LeftB) == HIGH){                                   // Checks if Left Mouse Button is pushed
+  //   delay(100);                                                     // Debounce delay
+  //   Serial.println("DATAB,L");                                      // Sends "L" stating the left button is pressed with the identifier "DATAB"
+  // }
+  // if(digitalRead(RightB) == HIGH){                                  // Checks if Right Enabled Button is pushed
+  //   delay(100);                                                     // Debounce delay
+  //   Serial.println("DATAB,R");                                      // Sends "L" stating the left button is pressed with the identifier "DATAB"
+  // }
 }
